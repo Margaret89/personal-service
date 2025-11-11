@@ -1,0 +1,51 @@
+// Neutral Face
+@font-face {
+	font-family: 'Neutral Face';
+	src: local('Neutral Face Regular'), local('Neutral-Face-Regular'),
+		url('../fonts/neutral_face/neutral_face.woff2') format('woff2'),
+		url('../fonts/neutral_face/neutral_face.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+//Commissioner
+@font-face {
+	font-family: 'Commissioner';
+	src: local('Commissioner Regular'), local('Commissioner-Regular'),
+		url('../fonts/Commissioner/Commissioner-Regular.woff2') format('woff2'),
+		url('../fonts/Commissioner/Commissioner-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Commissioner';
+	src: local('Commissioner Italic'), local('Commissioner-Italic'),
+		url('../fonts/Commissioner/Commissioner-Italic.woff2') format('woff2'),
+		url('../fonts/Commissioner/Commissioner-Italic.woff') format('woff');
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Commissioner';
+	src: local('Commissioner Bold'), local('Commissioner-Bold'),
+		url('../fonts/Commissioner/Commissioner-Bold.woff2') format('woff2'),
+		url('../fonts/Commissioner/Commissioner-Bold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Commissioner';
+	src: local('Commissioner BoldItalic'), local('Commissioner-BoldItalic'),
+		url('../fonts/Commissioner/Commissioner-BoldItalic.woff2') format('woff2'),
+		url('../fonts/Commissioner/Commissioner-BoldItalic.woff') format('woff');
+	font-weight: bold;
+	font-style: italic;
+	font-display: swap;
+}
