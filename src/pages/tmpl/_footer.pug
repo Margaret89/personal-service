@@ -1,1 +1,89 @@
 footer.footer
+	.footer-top
+		.container
+			.row
+				.col-12
+					.footer-top__content
+						a(href="/").footer-top__logo
+							|персонал
+							br
+							|сервис
+
+						ul.footer-menu
+							-
+								var list=[
+									{text:'Услуги'},
+									{text:'О нас'},
+									{text:'Контакты'},
+								]
+							each item in list
+								li.footer-menu__item
+									a(href="#").footer-menu__link= item.text
+
+						.footer-address
+							.footer-address__icon
+								+svg('ic-map','ic-map', '14', '20')
+
+							.footer-address__val г. Санкт-Петербург, ул. Литовская 33
+
+	.footer-main
+		.container
+			.row
+				.col-12
+					.footer-main__content
+						.footer-main__services
+							.footer-main__title Услуги
+
+							.footer-services
+								-
+									var list=[
+										{text:'Генеральная уборка'},
+										{text:'Генеральная уборка'},
+										{text:'Генеральная уборка'},
+										{text:'Генеральная уборка'},
+										{text:'Генеральная уборка'},
+									]
+								each item in list
+									a(href="#").footer-services__item
+										span.footer-services__val= item.text
+
+										span.footer-services__arr
+											+svg('ic-arrow-diagonal','ic-arrow-diagonal', '19', '19')
+
+						.footer-main__info
+							.footer-main__title Связаться с нами:
+
+							.footer-main__contacts
+								.social
+									a(href="#").social__item
+										img(src="/upload/whatsapp-color.svg", alt="")
+
+									a(href="#").social__item
+										img(src="/upload/telegram-color.svg", alt="")
+
+								a(href="tel:+79994557594").phone.phone_light
+									.phone__icon
+										+svg('ic-call','ic-call', '26', '26')
+
+									.phone__val +7 (999) 455 75 94
+
+							.footer-contacts
+								.footer-contacts__item
+									.footer-contacts__icon
+										+svg('ic-mail','ic-mail', '20', '16')
+
+									.footer-contacts__val
+										a(href="mailto:personal_info@mail.ru") personal_info@mail.ru
+								
+								
+							a(href="#").footer-main__lang Switch to English
+	
+	.footer-bottom
+		.container
+			.row
+				.col-12
+					.footer-bottom__content
+						.footer-bottom__copyright 2001-2025 ООО “Персонал Сервис”
+
+						.footer-bottom__polit
+							a(href="#") Политики в отношении обработки персональных данных

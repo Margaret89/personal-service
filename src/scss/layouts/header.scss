@@ -1,0 +1,60 @@
+.header{
+	background: #fff;
+	border-bottom: 1px solid #B9B9B9;
+	margin-bottom: 26px;
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+
+	&__content{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 40px;
+		height: 87px;
+		padding: 16px 0;
+	}
+
+	&__main{
+		display: flex;
+		align-items: center;
+		gap: 40px;
+	}
+
+	&__logo{
+		flex-shrink: 0;
+		font-family: var(--font-neutral);
+		font-size: 1.8rem;
+		line-height: 1;
+		color: var(--color-text);
+		text-transform: uppercase;
+		text-decoration: none;
+		transition: color 0.2s ease;
+
+		&:hover{color: var(--color-primary);}
+	}
+
+	&__address{
+		font-size: 1.6rem;
+		font-weight: bold;
+		color: #374151;
+	}
+
+	&__contacts{
+		display: flex;
+		align-items: center;
+		gap: 20px;
+	}
+
+	&__lang{
+		font-size: 1.6rem;
+		color: var(--color-primary-dark);
+		text-decoration: none;
+	}
+
+	&__info{
+		display: flex;
+		align-items: center;
+		gap: 20px;
+	}
+}

@@ -49,3 +49,23 @@
 	font-style: italic;
 	font-display: swap;
 }
+
+@font-face {
+	font-family: 'Commissioner';
+	src: local('Commissioner SemiBold'), local('Commissioner-SemiBold'),
+		url('../fonts/Commissioner/Commissioner-SemiBold.woff2') format('woff2'),
+		url('../fonts/Commissioner/Commissioner-SemiBold.woff') format('woff');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Commissioner';
+	src: local('Commissioner SemiBoldItalic'), local('Commissioner-SemiBoldItalic'),
+		url('../fonts/Commissioner/Commissioner-SemiBoldItalic.woff2') format('woff2'),
+		url('../fonts/Commissioner/Commissioner-SemiBoldItalic.woff') format('woff');
+	font-weight: 600;
+	font-style: italic;
+	font-display: swap;
+}

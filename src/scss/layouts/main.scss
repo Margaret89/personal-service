@@ -6,7 +6,8 @@
 	--font-btn: var(--font-neutral);
 
 	--color-primary: #208B95;
-	--color-primary-dark: #086C75;
+	--color-primary-light: #CEE4E6;
+	--color-primary-dark: #1e5961;
 	
 	--color-text: #000;
 	--color-link: #2CACBB;
@@ -26,14 +27,14 @@ body{
 
 body{font-size: 2rem;}
 
-// body.no-scroll {
-// 	position: fixed;
-// 	top: 0;
-// 	left: 0;
-// 	width: 100%;
-// 	height: 100%;
-// 	overflow: hidden;
-// }
+body.no-scroll{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
 
 img{max-width: 100%;}
 
@@ -123,11 +124,26 @@ ul{
 .wrapper{
 	display: flex;
 	flex-direction: column;
-	min-height: 100vh;
+	height: 100vh;
 	width: 100%;
 	margin: 0 auto;
 	overflow: hidden;
+	overflow-y: auto;
+	scrollbar-width: thin;
+	scrollbar-color: #B9B9B9 transparent;
+
+	&::-webkit-scrollbar{width: 4px;}
+	&::-webkit-scrollbar-track {background: transparent;}
+
+	&::-webkit-scrollbar-thumb {
+		background: #B9B9B9;
+		border-radius: 2px;
+	}
+
+	&::-webkit-scrollbar-thumb:hover {background: var(--color-primary);}
 }
+
+body.no-scroll .wrapper{overflow: hidden;}
 
 main{
 	flex: 1 1 auto;

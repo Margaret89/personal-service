@@ -1,0 +1,65 @@
+/*-------------- phone -----------------*/
+.phone{
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	height: 5rem;
+	border-radius: 2.5rem;
+	border: 0.5px solid #4B4B4B;
+	text-decoration: none;
+	position: relative;
+	z-index: 1;
+
+	&::before{
+		content: '';
+		display: block;
+		width: 50px;
+		height: 50px;
+		border-radius: 2.5rem;
+		background: var(--color-primary);
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		transition: width 0.3s ease;
+	}
+
+	&__icon{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		color: #fff;
+		position: relative;
+		z-index: 2;
+	}
+
+	&__val{
+		font-size: 1.6rem;
+		color: var(--color-primary);
+		white-space: nowrap;
+		padding-right: 45px;
+		position: relative;
+		z-index: 2;
+		transition: width 0.3s ease;
+	}
+
+	&:hover::before{
+		width: 100%;
+		border-color: var(--color-primary);
+	}
+
+	&:hover &__val{color: #fff;}
+
+	&_light{
+		background: #fff;
+		border-color: #fff;
+	}
+
+	&_light::before{background: var(--color-primary-light);}
+	&_light &__icon{color: var(--color-primary);}
+	&_light:hover &__val{color: var(--color-primary);}
+}
