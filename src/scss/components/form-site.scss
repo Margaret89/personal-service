@@ -163,60 +163,11 @@
 
 .popup-form{
 	width: 516px;
+	max-width: 100%;
 }
 
-// @media (max-width: 1339px) {
-// 	.form-site{
-// 		&__title{font-size: 4rem;}
-// 	}
-// }
-
-// @media (max-width: 991px) {
-// 	.form-wrap{
-// 		.p-indent{
-// 			padding-top: 50px;
-// 			padding-bottom: 50px;
-// 		}
-
-// 		&__img{margin-bottom: 50px;}
-// 	}
-
-// 	.form-site{
-// 		&__content{max-width: none;}
-// 	}
-// }
-
-// @media (max-width: 767px) {
-// 	.form-wrap{
-// 		.p-indent{
-// 			padding-top: 20px;
-// 		}
-
-// 		&__img{margin-bottom: 30px;}
-// 	}
-
-// 	.form-site{
-// 		&__title{font-size: 3.6rem;}
-// 	}
-
-// 	.popup-form{
-// 		.form-site{
-// 			&__title{font-size: 3.5rem;}
-// 		}
-// 	}
-// }
-
-// @media (max-width: 479px) {
-// 	.form-wrap{
-// 		.p-indent{
-// 			padding-top: 10px;
-// 		}
-
-// 		// &__img{margin-bottom: 30px;}
-// 	}
-
-// 	.form-site{
-// 		&__title{font-size: 2.7rem;}
-// 		&__desc{font-size: 1.8rem;}
-// 	}
-// }
+@media (max-width: 767px) {
+	.form-site{
+		&__title{text-align: left;}
+	}
+}
