@@ -1,0 +1,109 @@
+/*-------------- swiper -----------------*/
+body .swiper{display: none!important;}
+body .swiper.swiper-initialized{display: block!important;}
+
+.slider-arr-list{
+	display: inline-flex;
+	align-items: center;
+	gap: 35px;
+}
+
+body .swiper-button-prev.slider-arr,
+body .swiper-button-next.slider-arr{
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	border: 1px solid rgba(75, 75, 75, 0.8);
+	background: transparent;
+	transition: all 0.3s ease-in-out;
+	outline: none;
+	color: rgba(75, 75, 75, 0.8);
+	text-decoration: none;
+	position: static;
+	margin: 0;
+	transform: none;
+
+	svg{
+		width: auto;
+		height: auto;
+	}
+
+	&:hover{
+		box-shadow: inset 0 -100px 0 0 var(--color-primary);
+		border-color: var(--color-primary);
+		color: #fff;
+	}
+}
+
+body .swiper-button-prev.slider-arr.swiper-button-lock,
+body .swiper-button-next.slider-arr.swiper-button-lock{
+	display: none;
+}
+
+
+// body .swiper-horizontal > .swiper-pagination-bullets,
+// body .swiper-pagination-bullets.swiper-pagination-horizontal{
+// 	position: static;
+// 	margin: 20px auto 0;
+// }
+
+// body .swiper-pagination-bullet{
+// 	width: 8px;
+// 	height: 8px;
+// 	background: var(--color-second);
+// 	opacity: 0.3;
+// 	border-radius: 50%;
+// 	transition: opacity 0.2s ease;
+
+// 	&:hover{opacity: 0.7;}
+// }
+
+// body .swiper-pagination-bullet-active{opacity: 0.7;}
+
+// body .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+// body .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
+// 	margin: 0;
+// }
+
+// body .swiper-pagination{
+// 	display: flex;
+// 	justify-content: center;
+// 	align-items: center;
+// 	gap: 8px;
+// }
+
+// @media (max-width: 767px) {
+// 	.slider-arr-list{gap: 10px;}
+
+// 	body .swiper-button-prev.slider-arr,
+// 	body .swiper-button-next.slider-arr{
+// 		width: 32px;
+// 		height: 32px;
+
+// 		.icon{
+// 			width: 6px;
+// 			height: 10px;
+// 		}
+// 	}
+
+// 	.swiper-slide.catalog-item{display: grid!important;}
+// }
+
+@media (max-width: 767px) {
+	.slider-arr-list{gap: 24px;}
+	
+	body .swiper-button-prev.slider-arr,
+	body .swiper-button-next.slider-arr{
+		width: 55px;
+		height: 55px;
+
+		.icon{
+			width: 16px;
+			height: 33px;
+		}
+	}
+}

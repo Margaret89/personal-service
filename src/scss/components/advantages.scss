@@ -1,0 +1,155 @@
+/*-------------- advantages -----------------*/
+.advantage-wrap{
+	p + .btn{margin-top: 80px;}
+
+	&__content{max-width: 438px;}
+
+	&__info{
+		display: flex;
+		gap: 16px;
+	}
+
+	.advantages-list{margin-top: 76px;}
+}
+
+.advantage-info{
+	width: calc(50% - 8px);
+	background: var(--color-primary-dark);
+	border-radius: 40px 40px 40px 0;
+	padding: 53px 30px;
+	color: #fff;
+
+	&__title{
+		font-family: var(--font-neutral);
+		font-size: 2rem;
+		line-height: 1.2;
+		text-transform: uppercase;
+		margin-bottom: 20px;
+	}
+	
+	&__text{
+		font-size: 1.6rem;
+		line-height: 1.2;
+	}
+}
+
+.advantage-img{
+	border-radius: 40px;
+	overflow: hidden;
+
+	&__content{
+		height: 100%;
+
+		img{
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+}
+
+.advantages-list{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 100px 18px;
+
+	.advantage-item{width: calc(50% - 9px);}
+}
+
+.advantage-item{
+	&__top{
+		display: flex;
+		align-items: center;
+		gap: 16px;
+	}
+
+	&__icon{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+		background: var(--color-primary-dark);
+		color: #fff;
+	}
+
+	&__title{
+		max-width: 150px;
+		font-family: var(--font-neutral);
+		font-size: 2rem;
+		line-height: 1.2;
+		text-transform: uppercase;
+	}
+
+	&__text{
+		font-size: 1.6rem;
+		line-height: 1.2;
+		margin-top: 16px;
+	}
+}
+
+@media (max-width: 991px) {
+	.advantage-wrap{
+		&__content{
+			max-width: none;
+			margin-bottom: 40px;
+		}
+
+		p + .btn{margin-top: 40px;}
+	}
+}
+
+@media (max-width: 767px) {
+	.advantage-wrap{
+		&__info{flex-direction: column;}
+		.advantages-list{margin-top: 40px;}
+
+		.btn{
+			width: 100%;
+			margin-top: 40px;
+		}
+	}
+
+	.advantages-list{
+		gap: 45px;
+		.advantage-item{width: 100%;}
+	}
+
+	.advantage-info{
+		width: 100%;
+		border-radius: 24px;
+		padding: 35px 24px 65px;
+
+		&__title{font-size: 2.4rem;}
+	}
+
+	.advantage-img{
+		width: 100%;
+		border-radius: 24px;
+		padding-bottom: 61%;
+		position: relative;
+
+		&__content{
+			width: 100%;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: absolute;
+			top: 0;
+			left: 0;
+			
+			img{
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+
+	.advantage-item{
+		&__title{font-size: 2.4rem;}
+	}
+}

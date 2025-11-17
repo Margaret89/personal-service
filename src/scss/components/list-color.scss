@@ -1,0 +1,17 @@
+/*-------------- list-color -----------------*/
+.list-color{
+	list-style: none;
+	margin-bottom: 2rem;
+
+	li::before{
+		content: '';
+		display: inline-block;
+		vertical-align: middle;
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+		background: var(--color-primary-medium);
+		margin-left: -12px;
+		margin-right: 8px;
+	}
+}

@@ -1,0 +1,138 @@
+/*-------------- info -----------------*/
+.info-wrap{
+	&__text{
+		max-width: 480px;
+		color: #374151;
+		margin-left: auto;
+	}
+}
+
+.info-list{margin-top: 40px;}
+
+.info-item{
+	display: block;
+	border-radius: 40px;
+	overflow: hidden;
+	position: relative;
+
+	&__bg-wrap{
+		position: relative;
+		padding-bottom: 82%;
+	}
+
+	&__bg{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		transition: all 0.3s ease;
+
+		img{
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		&::after{
+			content: '';
+			display: block;
+			width: 100%;
+			height: 100%;
+			background: rgba(0,0,0,0.45);
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+
+	&__content{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 15px;
+		max-height: 100%;
+		width: 100%;
+		padding: 32px 40px;
+		color: #fff;
+		overflow-y: auto;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
+
+	&__title{
+		font-family: var(--font-neutral);
+		font-size: 3.2rem;
+		line-height: 1.25;
+		text-transform: uppercase;
+	}
+
+	&__text{
+		min-height: 48px;
+		max-width: 320px;
+		font-size: 2rem;
+		line-height: 1.2;
+		margin-top: 22px;
+	}
+
+	&__arr{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		width: 80px;
+		height: 80px;
+		border-radius: 50%;
+		background: var(--color-primary-medium);
+		color: #fff;
+		transition: all 0.3s ease;
+	}
+
+	&:hover &__bg{transform: translate(-50%, -50%) scale(1.05);}
+
+	&:hover &__arr{
+		box-shadow: inset 0 -100px 0 0 var(--color-primary-dark);
+		color: #fff;
+		transform: translateX(10px);
+	}
+}
+
+@media (max-width: 1279px) {
+	.info-item{
+		&__content{padding: 30px;}
+	}
+}
+
+@media (max-width: 991px) {
+	.info-wrap{
+		&__text{max-width: none;}
+	}
+
+	.info-item{
+		&__title{font-size: 2.4rem;}
+		&__text{font-size: 1.6rem;}
+	}
+}
+
+@media (max-width: 767px) {
+	.info-item{
+		border-radius: 24px;
+		margin-bottom: 24px;
+
+		&__text{display: none;}
+		&__bg-wrap{padding-bottom: 67%;}
+		&__content{padding: 22px 16px;}
+
+		&__arr{
+			width: 66px;
+			height: 66px;
+
+			.icon{
+				width: 20px;
+				height: 40px;
+			}
+		}
+	}
+}

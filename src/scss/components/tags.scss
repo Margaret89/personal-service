@@ -38,3 +38,15 @@
 		color: #fff;
 	}
 }
+
+@media (max-width: 767px) {
+	.tags{
+		gap: 8px;
+		
+		&__link{
+			height: 3.4rem;
+			border-radius: 1.7rem;
+			font-size: 1.4rem;
+		}
+	}
+}

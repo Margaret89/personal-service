@@ -1,0 +1,25 @@
+/*-------------- partners -----------------*/
+.partners{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 60px;
+	opacity: 0.6;
+}
+
+@media (max-width: 767px) {
+	.partners{
+		flex-wrap: nowrap;
+		justify-content: flex-start;
+		gap: 40px;
+		margin-left: -16px;
+		margin-right: -16px;
+		padding-left: 16px;
+		padding-right: 16px;
+
+		&__item{
+			flex-shrink: 0;
+			img{max-height: 50px;}
+		}
+	}
+}

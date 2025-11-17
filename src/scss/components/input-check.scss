@@ -1,0 +1,38 @@
+/*-------------- input-check -----------------*/
+.input-check{
+	display: flex;
+	align-items: flex-start;
+	gap: 10px;
+	font-size: 1.8rem;
+	color: var(--color-text);
+	margin: 0;
+	position: relative;
+	cursor: pointer;
+
+	b{font-weight: 600;}
+
+	input[type=checkbox]{display: none;}
+
+	&__mark{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		vertical-align: top;
+		flex-shrink: 0;
+		width: 18px;
+		height: 18px;
+		border: 1px solid var(--color-primary);
+		position: relative;
+		transition: border 0.2s ease 0s;
+
+		svg{
+			color: var(--color-primary);
+			opacity: 0;
+		}
+	}
+
+	&__text{margin-top: -2px;}
+
+	input[type=checkbox]:checked + &__mark{background-color: #fff;}
+	input[type=checkbox]:checked + &__mark svg{opacity: 1;}
+}

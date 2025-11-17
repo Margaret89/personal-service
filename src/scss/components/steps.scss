@@ -1,0 +1,166 @@
+/*-------------- steps -----------------*/
+.steps-wrap{
+	padding: 55px 0;
+
+	.person-info{margin-bottom: -126px;}
+}
+
+.steps{
+	background: url(../img/document.png) no-repeat 60px calc(100% - 80px);
+	position: relative;
+
+	&::before{
+		content: '';
+		display: block;
+		width: 388px;
+		height: 341px;
+		background: url(../img/flat-cards1.png) no-repeat center;
+		background-size: contain;
+		position: absolute;
+		top: 118px;
+		left: -73px;
+	}
+
+	&::after{
+		content: '';
+		display: block;
+		width: 353px;
+		height: 452px;
+		background: url(../img/flat-cards2.png) no-repeat center;
+		background-size: contain;
+		position: absolute;
+		top: 385px;
+		right: -64px;
+	}
+		
+	&__list{
+		display: flex;
+		flex-direction: column;
+		gap: 80px;
+		width: 458px;
+		margin: 0 auto;
+	}
+
+	&__item{
+		text-align: center;
+		position: relative;
+		opacity: 0.5;
+		transform: translateY(20px);
+		animation: fadeInUp 5s ease infinite;
+		animation-fill-mode: forwards;
+
+		&:not(:first-child)::after{
+			content: '';
+			display: block;
+			width: 1px;
+			height: 43px;
+			border-right: 3px dashed var(--color-primary-dark);
+			position: absolute;
+			bottom: calc(100% + 16px);
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+		}
+	}
+
+	&___list{counter-reset: step-index;}
+
+	&__num{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+		background: var(--color-primary-dark);
+		font-family: var(--font-neutral);
+		font-size: 3.2rem;
+		line-height: 1;
+		color: #fff;
+		margin-bottom: 20px;
+	}
+
+	&__label{
+		font-family: var(--font-neutral);
+		font-size: 3.2rem;
+		line-height: 1.25;
+		color: var(--color-primary-dark);
+		text-transform: uppercase;
+	}
+
+	&__btn{
+		margin-top: 60px;
+		text-align: center;
+	}
+}
+
+@keyframes fadeInUp {
+	 0% {
+		opacity: 0.5;
+		transform: translateY(20px);
+	}
+	10% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	90% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	100% {
+		opacity: 0.5;
+		transform: translateY(20px);
+	}
+}
+
+@media (max-width: 1279px) {
+	.steps-wrap{
+		.person-info{margin-bottom: -70px;}
+	}
+
+	.steps{
+		background-position: 0 calc(100% - 145px);
+
+		&::before{
+			width: 300px;
+			height: 263px;
+			left: -30px;
+		}
+
+		&::after{
+			width: 258px;
+			height: 332px;
+			right: -30px;
+		}
+	}
+}
+
+@media (max-width: 991px) {
+	.steps-wrap{
+		overflow: hidden;
+		.person-info{margin-bottom: -50px;}
+	}
+
+	.steps{
+		&::before{left: -130px;}
+		&::after{right: -130px;}
+	}
+}
+
+@media (max-width: 767px) {
+	.steps-wrap{
+		.person-info{margin-bottom: 0;}
+	}
+
+	.steps{
+		background: transparent;
+		
+		&::before,
+		&::after{
+			display: none;
+		}
+
+		&__list{width: 100%;}
+		&__label{font-size: 24px;}
+	}
+}

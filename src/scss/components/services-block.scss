@@ -1,0 +1,154 @@
+/*-------------- services-block -----------------*/
+.services-block-wrap{
+	.tags{margin-bottom: 32px;}
+}
+
+.services-block-list{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 48px 60px;
+
+	.services-block{width: calc(33.33% - 40px);}
+
+	&__btn{
+		text-align: center;
+		margin-top: 55px;
+	}
+}
+
+.services-block{
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+
+	&__img-wrap{
+		flex-shrink: 0;
+		display: block;
+		text-decoration: none;
+		padding-bottom: 61.5%;
+		position: relative;
+		overflow: hidden;
+		border-radius: 40px;
+	}
+
+	&__img{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		transition: transform 0.3s ease;
+
+		img{
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__img-wrap:hover &__img{transform: translate(-50%, -50%) scale(1.05);}
+
+	&__content{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		gap: 32px;
+		height: 100%;
+	}
+
+	&__title{
+		font-size: 2rem;
+		font-weight: 600;
+	
+		a{
+			color: var(--color-text);
+			text-decoration: none;
+			transition: all 0.2s ease;
+
+			&:hover{
+				color: var(--color-primary);
+				text-decoration: none;
+			}
+		}
+	}
+
+	&__text{
+		font-size: 1.6rem;
+		line-height: 1.2;
+		margin-top: 8px;
+	}
+
+	&__bottom{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 20px;
+	}
+
+	&__price{
+		display: inline-flex;
+		align-items: center;
+		font-size: 1.6rem;
+		font-weight: 600;
+		color: var(--color-primary-medium);
+	}
+
+	&__price-icon{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		width: 24px;
+		height: 24px;
+		margin-right: 5px;
+	}
+}
+
+@media (max-width: 1439px) {
+	.services-block-list{
+		gap: 48px 24px;
+
+		.services-block{width: calc(33.33% - 16px);}
+	}
+}
+
+@media (max-width: 1279px) {
+	.services-block-list{
+		.services-block{width: calc(50% - 12px);}
+	}
+}
+
+@media (max-width: 991px) {
+	.services-block{
+		.btn_small,
+		input[type="submit"].btn_small,
+		button.btn_small{
+			padding: 0 20px;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.services-block-list{
+		.services-block{width: 100%;}
+
+		&__btn{
+			margin-top: 40px;
+
+			.btn{width: 100%;}
+		}
+	}
+
+	.services-block{
+		gap: 16px;
+
+		&__img-wrap{
+			border-radius: 24px;
+			padding-bottom: 47.5%;
+		}
+	}
+}

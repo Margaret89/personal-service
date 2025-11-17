@@ -8,20 +8,22 @@
 	--color-primary: #208B95;
 	--color-primary-light: #CEE4E6;
 	--color-primary-dark: #1e5961;
+	--color-primary-medium: #2CACBB;
 	
 	--color-text: #000;
-	--color-link: #2CACBB;
+	--color-link: var(-color-primary-medium);
 	--color-link-hover: var(--color-primary-dark);
 
 	--color-danger: #E01E1E;
-	--margin-indent: 90px;
+	--margin-indent: 100px;
+	--bg-grey: #F9F9F9;
 }
 
 html,
 body{
 	background: #fff;
 	font-family: var(--font-site);
-	@include font(normal, normal, 10px, 1, var(--color-text));
+	@include font(normal, normal, 10px, 1.2, var(--color-text));
 	box-sizing: border-box;
 }
 
@@ -50,7 +52,7 @@ a{
 
 p{
 	padding: 0;
-	margin-bottom: 2rem;
+	margin-bottom: 2.4rem;
 }
 
 h1,.h1,
@@ -60,13 +62,13 @@ h4,.h4,
 h5,.h5
 {
 	font-family: var(--font-header);
-	color: #141414;
+	color: var(--color-text);
 	text-transform: uppercase;
 }
 
 h1,.h1{
-	font-size: 8rem;
-	line-height: 1;
+	font-size: 10rem;
+	line-height: 1.1;
 	margin-bottom: 5rem;
 }
 
@@ -85,7 +87,8 @@ h3,.h3{
 h4,.h4{
 	font-size: 2rem;
 	line-height: 1.2;
-	margin-bottom: 5rem;
+	color: #374151;
+	margin-bottom: 2rem;
 }
 
 h5,.h5{
@@ -100,8 +103,13 @@ h6,.h6{
 	margin-bottom: 2rem;
 }
 
+h2 + p,
+.h2 + p{
+	margin-top: -1.8rem;
+}
+
 ol, ul{
-	padding-left: 20px;
+	padding-left: 12px;
 }
 
 ul{
@@ -118,7 +126,15 @@ ul{
 		background: var(--color-text);
 		margin-left: -12px;
 		margin-right: 8px;
+		margin-top: -2px;
 	}
+}
+
+li{margin-bottom: 24px;}
+
+p + ul,
+p + ol{
+	margin-top: 40px;
 }
 
 .wrapper{
@@ -153,6 +169,19 @@ main{
 
 .last-elem{margin-bottom: -90px;}
 
+.st-width{
+	width: 1540px;
+	max-width: calc(100% - 66px);
+	margin: 0 auto;
+}
+
+hr{
+	display: block;
+	height: 0.5px;
+	background: #B9B9B9;
+	border: none;
+}
+
 .btn,
 input[type="submit"].btn,
 button.btn{
@@ -173,20 +202,17 @@ button.btn{
 	cursor: pointer;
 	transition: all 0.2s ease 0s;
 
-	.icon{
-		flex-shrink: 0;
-		fill: #fff;
-	}
+	.icon{flex-shrink: 0;}
 
 	&:hover{
-		box-shadow: inset 0 -100px 0 0 var(--color-second-hover);
+		box-shadow: inset 0 -100px 0 0 var(--color-primary-dark);
 		color: #fff;
 	}
 
 	&_big{
-		height: 10rem;
+		height: 8rem;
 		border-radius: 5rem;
-		font-size: 1.8rem;
+		padding: 0 60px;
 	}
 
 	&_medium{
@@ -198,6 +224,7 @@ button.btn{
 	&_small{
 		height: 4.6rem;
 		border-radius: 2.3rem;
+		padding: 0 40px;
 	}
 
 	&_border{
@@ -227,6 +254,21 @@ button.btn{
 .pt-indent{padding-top: var(--margin-indent);}
 .pb-indent{padding-bottom: var(--margin-indent);}
 
+.bg-color{
+	background-color: var(--color-primary-dark);
+	color: #fff;
+
+	h1,.h1,
+	h2,.h2,
+	h3,.h3,
+	h4,.h4,
+	h5,.h5{
+		color: #fff;
+	}
+}
+
+.bg-grey{background-color: var(--bg-grey);}
+
 .code{
 	background-color: #f7f7f7;
 	border: 1px solid #e1e1e8;
@@ -244,3 +286,58 @@ button.btn{
 .text-uppercase{text-transform: uppercase !important;}
 .text-bold {font-weight: 700 !important;}
 .text-color {color: var(--color-primary) !important;}
+
+@media (max-width: 1439px) {
+	.container{max-width: calc(100% - 66px);}
+}
+
+@media (max-width: 1279px) {
+	h1, .h1{font-size: 7rem;}
+	h2, .h2{font-size: 4.2rem;}
+}
+
+@media (max-width: 991px) {
+	:root{
+		--margin-indent: 70px;
+	}
+
+	.container{
+		max-width: 100%;
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+
+	.st-width{max-width: 100%;}
+}
+
+@media (max-width: 767px) {
+	:root{
+		--margin-indent: 60px;
+	}
+
+	body{font-size: 1.6rem;}
+
+	h1, .h1{
+		font-size: 5.2rem;
+		line-height: 1.2;
+	}
+
+	h2, .h2{
+		margin-bottom: 4.6rem;
+	}
+
+	h4, .h4{
+		font-size: 1.4rem;
+	}
+
+	.btn,
+	input[type="submit"].btn,
+	button.btn{
+		&_big{
+			height: 6.4rem;
+			border-radius: 3.2rem;
+			font-size: 1.8rem;
+			padding: 0 30px;
+		}
+	}
+}

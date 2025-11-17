@@ -1,99 +1,186 @@
 header.header
-	.container
-		.row
-			.col-12
-				.header__content
-					.header__main
-						a(href="/").header__logo
-							|персонал
-							br
-							|сервис
+	.header-desktop
+		.container
+			.row
+				.col-12
+					.header__content
+						.header__main
+							a(href="/").header__logo
+								|персонал
+								br
+								|сервис
 
-						ul.main-menu
-							li.main-menu__item
-								span.main-menu__link.main-menu__link_green.js-btn-services
-									+svg('ic-dots','ic-dots', '14', '14')
-									+svg('ic-close','ic-close', '12', '12')
-									|Услуги
+							ul.main-menu
+								li.main-menu__item
+									span.main-menu__link.main-menu__link_green.js-btn-services
+										+svg('ic-dots','ic-dots', '14', '14')
+										+svg('ic-close','ic-close', '12', '12')
+										|Услуги
 
-								.main-menu-popup.js-main-menu-popup
-									.main-menu-popup__main
-										ul.tags
-											-
-												var list=[
-													{text:'все'},
-													{text:'регулярная уборка'},
-													{text:'объекты', status:'active'},
-													{text:'мытьё и фасады'},
-													{text:'химчистка и мебель'},
-													{text:'Территория'},
-												]
-											each item in list
-												li.tags__item(class=item.status?' active':'')
-													a(href="#").tags__link= item.text
+									.main-menu-popup.js-main-menu-popup
+										.main-menu-popup__main
+											ul.tags
+												-
+													var list=[
+														{text:'все'},
+														{text:'регулярная уборка'},
+														{text:'объекты', status:'active'},
+														{text:'мытьё и фасады'},
+														{text:'химчистка и мебель'},
+														{text:'Территория'},
+													]
+												each item in list
+													li.tags__item(class=item.status?' active':'')
+														a(href="#").tags__link= item.text
 
-										.list-services
-											-
-												var list=[
-													{text:'Комплексное обслуживание мест общего пользования'},
-													{text:'Уход за придомовой территорией'},
-													{text:'Аварийное обслуживание: срочный выход сотрудников'},
-													{text:'Генеральная уборка'},
-													{text:'Химическая чистка мебели и ковровых покрытий'},
-													{text:'Благоустройство территории и уход за насаждениями'},
-													{text:'Уборка после ремонта'},
-													{text:'Мытье окон и витражного остекления'},
-													{text:'Вывоз снега, покос травы'},
-													{text:'Аварийное обслуживание: срочный выход сотрудников'},
-													{text:'Генеральная уборка'},
-													{text:'Химическая чистка мебели и ковровых покрытий'},
-												]
-											each item in list
-												a(href="#").service-item
-													.service-item__title= item.text
+											.list-services
+												-
+													var list=[
+														{text:'Комплексное обслуживание мест общего пользования'},
+														{text:'Уход за придомовой территорией'},
+														{text:'Аварийное обслуживание: срочный выход сотрудников'},
+														{text:'Генеральная уборка'},
+														{text:'Химическая чистка мебели и ковровых покрытий'},
+														{text:'Благоустройство территории и уход за насаждениями'},
+														{text:'Уборка после ремонта'},
+														{text:'Мытье окон и витражного остекления'},
+														{text:'Вывоз снега, покос травы'},
+														{text:'Аварийное обслуживание: срочный выход сотрудников'},
+														{text:'Генеральная уборка'},
+														{text:'Химическая чистка мебели и ковровых покрытий'},
+													]
+												each item in list
+													a(href="#").service-item
+														.service-item__title= item.text
 
-													.service-item__bottom
-														.service-item__icon
-															+svg('ic-clean','ic-clean', '26', '26')
+														.service-item__bottom
+															.service-item__icon
+																+svg('ic-clean','ic-clean', '26', '26')
 
-														.service-item__arr
-															+svg('ic-arrow-diagonal','ic-arrow-diagonal', '19', '19')
+															.service-item__arr
+																+svg('ic-arrow-diagonal','ic-arrow-diagonal', '19', '19')
 
-									.info-card
-										.info-card__title
-											|Балтийская
-											br
-											|жемчужина
+										.info-card
+											.info-card__title
+												|Балтийская
+												br
+												|жемчужина
 
-										.info-card-params
-											.info-card-params__item 7 000 м
-												span.sub
-											
-											.info-card-params__item 350 апартаментов
-											.info-card-params__item 37 сотрудников
-											.info-card-params__item 37 сотрудников
+											.info-card-params
+												.info-card-params__item 7 000 м
+													span.sub
+												
+												.info-card-params__item 350 апартаментов
+												.info-card-params__item 37 сотрудников
+												.info-card-params__item 37 сотрудников
 
-							li.main-menu__item
-								a(href="#").main-menu__link Клиенты
+								li.main-menu__item
+									a(href="#").main-menu__link Клиенты
 
-							li.main-menu__item
-								a(href="#").main-menu__link О компании
-						
-					.header__address г. Санкт-Петербург
-
-					.header__info
-						.header__contacts
-							.social
-								a(href="#").social__item
-									img(src="/upload/whatsapp-green.svg", alt="")
-
-								a(href="#").social__item
-									img(src="/upload/telegram-green.svg", alt="")
-
-							a(href="tel:+79994557594").phone
-								.phone__icon
-									+svg('ic-call','ic-call', '26', '26')
-
-								.phone__val +7 (999) 455 75 94
+								li.main-menu__item
+									a(href="#").main-menu__link О компании
 							
-						a(href="#").header__lang Eng
+						.header__address г. Санкт-Петербург
+
+						.header__info
+							.header__contacts
+								.social
+									a(href="#").social__item
+										img(src="/upload/whatsapp-green.svg", alt="")
+
+									a(href="#").social__item
+										img(src="/upload/telegram-green.svg", alt="")
+
+								a(href="tel:+79994557594").phone
+									.phone__icon
+										+svg('ic-call','ic-call', '26', '26')
+
+									.phone__val +7 (999) 455 75 94
+								
+							a(href="#").header__lang Eng
+
+	.header-mobile.js-header-mobile
+		.container
+			.row
+				.col-12
+					.header-mobile__content
+						.header-mobile__main
+							.ic-hamburger.js-mobile-menu-open
+								span
+
+							a(href="/").header-mobile__logo
+								|персонал
+								br
+								|сервис
+
+						a(href="tel:+79994557594").header-mobile__phone
+							+svg('ic-call','ic-call', '26', '26')
+							|+7 (999) 455 75 94
+
+						.header-mobile__close
+							.ic-hamburger.active.js-mobile-menu-close
+								span
+
+	.header-mobile-popup.js-header-mobile-popup
+			ul.mobile-menu.js-mobile-menu
+				-
+					var list=[
+						{
+							text:'Услуги',
+							sub:[
+								'Генеральная уборка',
+								'Уборка территорий',
+								'Мытьё окон',
+								'Предоставление персонала',
+								'Уход за растениями',
+							]
+						},
+						{text:'Кейсы'},
+						{text:'Этапы работы'},
+						{text:'О компании '},
+						{
+							text:'Контакты',
+							sub:[
+								'Тест 1',
+								'Тест 2',
+							]
+						},
+					]
+				each item in list
+					li.mobile-menu__item
+						a(href="#").mobile-menu__link= item.text
+
+						if(item.sub)
+							span.mobile-menu__arr.js-mobile-menu-arr(data-level="1")
+								+svg('ic-arrow-right','ic-arrow-right', '7', '14')
+							
+							ul.mobile-menu__sub.js-mobile-menu-sub
+								li.mobile-menu__item
+									.mobile-menu-back.js-mobile-menu-back(data-level="0")
+										span.mobile-menu-back__arr
+											+svg('ic-arrow-left','ic-arrow-left', '7', '14')
+
+										span.mobile-menu-back__label= item.text
+
+								each sub in item.sub
+									li.mobile-menu__item
+										a(href="#").mobile-menu__link= sub
+
+			.header-mobile-popup__info
+				.header-mobile-popup__address г. Санкт-Петербург
+
+				.header-mobile-popup__contacts
+					.social
+						a(href="#").social__item
+							img(src="/upload/whatsapp-color.svg", alt="")
+
+						a(href="#").social__item
+							img(src="/upload/telegram-color.svg", alt="")
+
+					a(href="tel:+79994557594").phone
+						.phone__icon
+							+svg('ic-call','ic-call', '26', '26')
+
+						.phone__val +7 (999) 455 75 94
+
+				.header-mobile-popup__lang Switch to English

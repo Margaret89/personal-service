@@ -1,0 +1,212 @@
+/*-------------- form-line -----------------*/
+.form-line{
+	height: 9.8rem;
+	border-radius: 4.9rem;
+	background: #fff;
+	color: var(--color-text);
+
+	&__content{
+		display: flex;
+		height: 100%;
+	}
+
+	.btn{
+		flex-shrink: 0;
+		height: 100%;
+	}
+
+	&__field:not(:last-child){border-left: 1px solid #B9B9B9;}
+
+	&__field{
+		width: 100%;
+		position: relative;
+	}
+
+	&__field:first-child{border-radius: 4.9rem 0 0 4.9rem;}
+
+	input[type="text"],
+	input[type="email"],
+	input[type="number"],
+	input[type="password"],
+	input[type="time"],
+	input[type="date"],
+	textarea{
+		display: flex;
+		align-items: center;
+		height: 100%;
+		width: 100%;
+		font-family: var(--font-site);
+		font-size: 2rem;
+		line-height: 1.2;
+		color: #374151;
+		text-align: center;
+		padding: 0 20px;
+		border-radius: 0;
+		border: 0;
+		outline: 0;
+		margin: 0;
+		background: transparent;
+		box-shadow: none;
+		transition: background-color 0.2s ease 0s;
+	}
+
+	textarea{
+		height: 16rem;
+		padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
+	}
+
+	input[type="text"]::placeholder,
+	input[type="email"]::placeholder,
+	input[type="number"]::placeholder,
+	input[type="password"]::placeholder,
+	input[type="time"]::placeholder,
+	input[type="date"]::placeholder,
+	textarea::placeholder{
+		color: #B9B9B9;
+		opacity: 1;
+	}
+
+	input[type="text"]:focus,
+	input[type="number"]:focus,
+	input[type="email"]:focus,
+	input[type="password"]:focus,
+	input[type="time"]:focus,
+	input[type="date"]:focus,
+	textarea:focus{
+		background: #f6f6f6;
+	}
+
+	&__field.error{
+		input[type="text"]::placeholder,
+		input[type="email"]::placeholder,
+		input[type="number"]::placeholder,
+		input[type="password"]::placeholder,
+		input[type="time"]::placeholder,
+		input[type="date"]::placeholder,
+		textarea::placeholder{
+			color: var(--color-danger);
+		}
+	}
+
+	.choices{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+
+		&__inner{
+			height: 100%;
+			width: auto;
+			border: none;
+			border-radius: 4.9rem 0 0 4.9rem;
+			padding: 0 10px;
+		}
+
+		&.is-open .choices__inner{
+			border-radius: 4.9rem 0 0 0;
+		}
+
+		&__list--single{width: auto;}
+	}
+
+	.choices[data-type*="select-one"]::after{
+		flex-shrink: 0;
+		position: static;
+		transform: translateY(0);
+	}
+
+	.choices.is-open[data-type*="select-one"]::after{transform: translateY(0) rotate(180deg);}
+
+	.error-msg{
+		font-size: 1.2rem;
+		line-height: 1.5;
+		color: var(--color-danger);
+		margin-bottom: 3px;
+	}
+
+	.btn{
+		height: 9.8rem;
+		border-radius: 4.9rem;
+		padding: 0 56px;
+	}
+
+	&__note{display: none;}
+}
+
+@media (max-width: 1279px) {
+	.form-line{
+		.btn{padding: 0 20px;}
+
+		input[type="text"],
+		input[type="email"],
+		input[type="number"],
+		input[type="password"],
+		input[type="time"],
+		input[type="date"],
+		textarea{
+			padding-left: 12px;
+			padding-right: 12px;
+		}
+	}
+}
+
+@media (max-width: 991px) {
+	.form-line{
+		height: auto;
+		border-radius: 0;
+
+		&__content{
+			flex-wrap: wrap;
+			gap: 16px 8px;
+		}
+
+		&__field{width: calc(50% - 4px);}
+		&__field:nth-child(3){width: 100%;}
+		&__field:not(:last-child){border: 0;}
+
+		input[type="text"],
+		input[type="email"],
+		input[type="number"],
+		input[type="password"],
+		input[type="time"],
+		input[type="date"],
+		textarea{
+			height: 5.6rem;
+			border-radius: 1.6rem;
+			border: 1px solid #CEE4E6;
+		}
+
+		.choices{
+			height: 5.6rem;
+			border-radius: 1.6rem;
+			border: 1px solid #CEE4E6;
+		}
+
+		.btn{
+			height: 6.4rem;
+			width: 100%;
+			border-radius: 3.2rem;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.form-line{
+		.btn{font-size: 1.8rem;}
+
+		&__note{
+			display: flex;
+			align-items: center;
+			gap: 6px;
+			margin-top: 18px;
+			font-size: 1.6rem;
+			padding-left: 10px;
+
+			.icon{
+				flex-shrink: 0;
+				color: #374151;
+			}
+		}
+	}
+}

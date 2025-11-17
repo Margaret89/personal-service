@@ -1,0 +1,222 @@
+/*-------------- form-site -----------------*/
+.form-site{
+	&__title{
+		font-family: var(--font-neutral);
+		font-size: 2.4rem;
+		line-height: 1.3;
+		text-align: center;
+		text-transform: uppercase;
+	}
+
+	&__desc{
+		font-size: 1.8rem;
+		line-height: 1.2;
+		margin-top: 16px;
+	}
+
+	&__content{
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		max-width: 518px;
+		margin-top: 32px;
+	}
+
+	&__item{position: relative;}
+
+	&__label{
+		font-size: 1.6rem;
+		line-height: 1.2;
+		color: #B9B9B9;
+		padding: 5px;
+		background: #fff;
+		position: absolute;
+		top: 50%;
+		left: 19px;
+		transition: transform 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+		transform: translateY(-50%);
+	}
+
+	input[type="text"],
+	input[type="email"],
+	input[type="number"],
+	input[type="password"],
+	input[type="time"],
+	input[type="date"],
+	textarea{
+		display: inline-flex;
+		align-items: center;
+		height: 6.4rem;
+		width: 100%;
+		font-family: var(--font-site);
+		font-size: 1.6rem;
+		line-height: 1.2;
+		color: var(--color-text);
+		padding: 0 24px;
+		border-radius: 16px;
+		border: 1px solid #B9B9B9;
+		outline: 0;
+		margin: 0;
+		background: transparent;
+		box-shadow: none;
+		transition: border-color 0.2s ease 0s;
+	}
+
+	textarea{
+		height: 16rem;
+		padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
+	}
+
+	textarea + &__label{
+		top: 10px;
+		transform: translateY(0);
+	}
+
+	input[type="text"]:focus,
+	input[type="number"]:focus,
+	input[type="email"]:focus,
+	input[type="password"]:focus,
+	input[type="time"]:focus,
+	input[type="date"]:focus,
+	textarea:focus,
+	input[type="text"]:hover,
+	input[type="number"]:hover,
+	input[type="email"]:hover,
+	input[type="password"]:hover,
+	input[type="time"]:hover,
+	input[type="date"]:hover,
+	textarea:hover{
+		border-color: var(--color-primary);
+	}
+
+	input[type="text"]:focus + &__label,
+	input[type="number"]:focus + &__label,
+	input[type="email"]:focus + &__label,
+	input[type="password"]:focus + &__label,
+	input[type="time"]:focus + &__label,
+	input[type="date"]:focus + &__label,
+	input[type="text"]:not(:placeholder-shown) + &__label,
+	input[type="number"]:not(:placeholder-shown) + &__label,
+	input[type="email"]:not(:placeholder-shown) + &__label,
+	input[type="password"]:not(:placeholder-shown) + &__label,
+	input[type="time"]:not(:placeholder-shown) + &__label,
+	input[type="date"]:not(:placeholder-shown) + &__label{
+		transform: scale(0.75) translateY(-60px) translateX(-5px);
+	}
+
+	textarea:focus + &__label,
+	textarea:not(:placeholder-shown) + &__label{
+		transform: scale(0.75) translateY(-30px) translateX(-5px);
+	}
+
+	&__field{
+		display: block;
+		position: relative;
+	}
+
+	&__field.error{
+		input[type="text"],
+		input[type="number"],
+		input[type="email"],
+		input[type="password"],
+		input[type="time"],
+		input[type="date"],
+		textarea{
+			border-color: var(--color-danger);
+		}
+	}
+
+	&__btn{
+		margin-top: 30px;
+
+		.btn{width: 100%;}
+	}
+
+	.error-msg{
+		font-size: 1.2rem;
+		line-height: 1.5;
+		color: var(--color-danger);
+		position: absolute;
+		top: 100%;
+		left: 0;
+	}
+
+	
+	&__polit{
+		margin-top: 30px;
+		position: relative;
+	}
+}
+
+.success-alert{
+	max-width: 430px;
+	text-align: center;
+
+	&__title{
+		font-size: 3.2rem;
+		font-weight: 500;
+		line-height: 1.2;
+		margin-bottom: 2rem;
+	}
+}
+
+.popup-form{
+	width: 516px;
+}
+
+// @media (max-width: 1339px) {
+// 	.form-site{
+// 		&__title{font-size: 4rem;}
+// 	}
+// }
+
+// @media (max-width: 991px) {
+// 	.form-wrap{
+// 		.p-indent{
+// 			padding-top: 50px;
+// 			padding-bottom: 50px;
+// 		}
+
+// 		&__img{margin-bottom: 50px;}
+// 	}
+
+// 	.form-site{
+// 		&__content{max-width: none;}
+// 	}
+// }
+
+// @media (max-width: 767px) {
+// 	.form-wrap{
+// 		.p-indent{
+// 			padding-top: 20px;
+// 		}
+
+// 		&__img{margin-bottom: 30px;}
+// 	}
+
+// 	.form-site{
+// 		&__title{font-size: 3.6rem;}
+// 	}
+
+// 	.popup-form{
+// 		.form-site{
+// 			&__title{font-size: 3.5rem;}
+// 		}
+// 	}
+// }
+
+// @media (max-width: 479px) {
+// 	.form-wrap{
+// 		.p-indent{
+// 			padding-top: 10px;
+// 		}
+
+// 		// &__img{margin-bottom: 30px;}
+// 	}
+
+// 	.form-site{
+// 		&__title{font-size: 2.7rem;}
+// 		&__desc{font-size: 1.8rem;}
+// 	}
+// }

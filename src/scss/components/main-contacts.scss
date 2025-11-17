@@ -1,0 +1,151 @@
+/*-------------- main-contacts -----------------*/
+.main-contacts{
+	background: url(../img/bg-windows.jpg) no-repeat center;
+	background-size: cover;
+	padding: 100px 0;
+
+	&__wrap{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 24px;
+	}
+
+	&__content{
+		width: 440px;
+		color: #fff;
+	}
+
+	&__title{
+		font-family: var(--font-neutral);
+		font-size: 3.2rem;
+		line-height: 1.2;
+		text-transform: uppercase;
+	}
+
+	&__text{
+		font-size: 2rem;
+		line-height: 1.2;
+		margin-top: 45px;
+	}
+}
+
+.contacts-block{
+	flex-shrink: 0;
+	width: 404px;
+	position: relative;
+	border-radius: 24px;
+	background: #fff;
+	padding: 95px 50px 65px;
+
+	&__call{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 102px;
+		height: 102px;
+		border-radius: 50%;
+		background: var(--color-primary-dark);
+		color: #fff;
+		position: absolute;
+		top: -51px;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+	}
+
+	&__title{
+		font-family: var(--font-neutral);
+		font-size: 2rem;
+		line-height: 1.2;
+		text-transform: uppercase;
+		text-align: center;
+		margin-bottom: 32px;
+	}
+
+	&__list{
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	&__item{
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		height: 7.6rem;
+		background: #CEE4E6;
+		border: none;
+		border-radius: 3.8rem;
+		font-size: 1.6rem;
+		color: var(--color-primary-dark);
+		text-decoration: none;
+		padding: 0 44px;
+		cursor: pointer;
+		transition: all 0.2s ease 0s;
+
+		&__icon{
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			flex-shrink: 0;
+			width: 32px;
+			height: 32px;
+		}
+
+		&:hover{
+			box-shadow: inset 0 -100px 0 0 var(--color-primary-dark);
+			color: #fff;
+		}
+
+		&_green{
+			background: #55C153;
+			color: #fff;
+
+			&:hover{
+				box-shadow: inset 0 -100px 0 0 #337532;
+				color: #fff;
+			}
+		}
+
+		&_blue{
+			background: #17649F;
+			color: #fff;
+
+			&:hover{
+				box-shadow: inset 0 -100px 0 0 #0d3c5f;
+				color: #fff;
+			}
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.main-contacts{
+		padding: 116px 0 60px;
+
+		&__wrap{
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 115px;
+		}
+
+		&__title{font-size: 4.2rem;}
+		&__text{margin-top: 20px;}
+		&__content{width: 100%;}
+	}
+
+	.contacts-block{
+		width: 100%;
+		background: transparent;
+		padding: 0;
+		border-radius: 0;
+
+		&__call,
+		&__title{
+			display: none;
+		}
+
+		&__item{padding: 0 65px;}
+	}
+}

@@ -20,7 +20,7 @@ footer.footer
 								li.footer-menu__item
 									a(href="#").footer-menu__link= item.text
 
-						.footer-address
+						.footer-address.d-none.d-md-flex
 							.footer-address__icon
 								+svg('ic-map','ic-map', '14', '20')
 
@@ -68,12 +68,20 @@ footer.footer
 									.phone__val +7 (999) 455 75 94
 
 							.footer-contacts
+								.footer-contacts__item.d-md-none
+									.footer-contacts__icon
+										+svg('ic-map','ic-map', '14', '20')
+
+									.footer-contacts__val г. Санкт-Петербург, ул. Литовская 33
+									
 								.footer-contacts__item
 									.footer-contacts__icon
 										+svg('ic-mail','ic-mail', '20', '16')
 
 									.footer-contacts__val
 										a(href="mailto:personal_info@mail.ru") personal_info@mail.ru
+
+								
 								
 								
 							a(href="#").footer-main__lang Switch to English
@@ -87,3 +95,43 @@ footer.footer
 
 						.footer-bottom__polit
 							a(href="#") Политики в отношении обработки персональных данных
+
+#callback(style='display: none;')
+	.popup-form
+		form.form-site(action="/main.html")
+			.form-site__title Закажите обратный звонок
+			.form-site__desc Наш менеджер свяжется с вами для уточнения запроса и ответов на ваши вопросы
+
+			.form-site__content
+				.form-site__item.js-form-site-item
+					label.form-site__field
+						input(name="name", type="text", required="required", placeholder=" ")
+
+						.form-site__label Ваше имя*
+
+				.form-site__item.js-form-site-item
+					label.form-site__field
+						input(name="phone", type="text", class="js-phone", required="required", placeholder=" ")
+						.form-site__label Введите номер телефона*
+
+				.form-site__item.js-form-site-item
+					label.form-site__field
+						textarea(name="msg", placeholder=" ")
+						.form-site__label Комментарий 
+
+			.form-site__polit
+				label.input-check
+					input(type='checkbox', required="required", checked="checked")
+					span.input-check__mark
+						+svg('ic-check','ic-check', '12', '10')
+					span.input-check__text Я соглашаюсь с 
+						a(href="#")
+							b политикой обработки персональных данных
+
+			.form-site__btn
+				input(type="submit", value="Оставить заявку").btn.btn_medium.js-btn-submit
+
+#msg-success(style='display: none;')
+	.success-alert.js-success-alert
+		.success-alert__title.js-success-alert-title Ваше сообщение отправлено!
+		.success-alert__text.js-success-alert-text В ближайшее время с вами свяжется наш менеджер и обсудит все детали.
