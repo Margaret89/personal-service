@@ -1,0 +1,46 @@
+section.advantage-wrap.m-indent
+	.container
+		.row
+			.col-lg-4.col-xl-6.d-flex.align-items-center
+				.advantage-wrap__content
+					.h4 Отличия
+
+					h2 Что принесёт результат?
+
+					.d-none.d-md-block
+						p Отдел экспресс-подбора на связи 24/7, а менеджер гарантирует уникальные решения под объём и специфику
+
+						a(href="#", data-fancybox, data-src="#callback").btn.btn_big Оставить заявку
+
+			.col-lg-8.col-xl-6
+				.advantage-wrap__info
+					.advantage-info
+						.advantage-info__title Персональный менеджер 24/7
+
+						.advantage-info__text Не следите за графиками, заменами и качеством. Поручите это менеджеру, который постоянно будет на объекте
+
+					.advantage-img
+						.advantage-img__content
+							img(src="/upload/about.jpg", alt="")
+
+				.advantages-list
+					-
+						var list=[
+							{title:'обученный персонал', text:'Горничные, уборщики, официанты — в форме, с медкнижками, без текучки'},
+							{title:'прозрачная работа', text:'Документы, фотоотчёты, табели — всё по договору и без скрытых доплат'},
+							{title:'срочные выезды', text:'Оперативное реагирование и выход сотрудников круглосуточно в случае аварийных ситуаций'},
+							{title:'комфорт гостей', text:'Создаём ощущение уюта, порядка и статуса на объекте: лобби, номер, офис, зелёные зоны'},
+						]
+					each item in list
+						.advantage-item
+							.advantage-item__top
+								.advantage-item__icon
+									+svg('ic-clean','ic-clean', '26', '26')
+
+								.advantage-item__title= item.title
+
+							.advantage-item__text= item.text
+
+
+				.d-md-none
+					a(href="#", data-fancybox, data-src="#callback").btn.btn_big Оставить заявку

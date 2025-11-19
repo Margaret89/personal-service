@@ -1,0 +1,62 @@
+section.services-block-wrap.m-indent
+	.container
+		.row
+			.col-12
+				.h4 Услуги
+				h2 Клининг 
+					span.d-none.d-md-inline для бизнеса
+
+				ul.tags
+					-
+						var list=[
+							{text:'все', status:'active'},
+							{text:'регулярная уборка'},
+							{text:'объекты'},
+							{text:'мытьё и фасады'},
+							{text:'химчистка и мебель'},
+							{text:'Территория'},
+						]
+					each item in list
+						li.tags__item(class=item.status?' active':'')
+							a(href="#").tags__link= item.text
+
+	.container
+		.row
+			.col-12
+				.services-block-list
+					-
+						var list=[
+							{img:'service.jpg', title:'Комплексное обслуживание мест общего пользования', text:'Регулярная уборка и поддержание чистоты в холлах, лифтах, коридорах и других общих зонах.'},
+							{img:'service.jpg', title:'Комплексное обслуживание', text:'Регулярная уборка и поддержание чистоты в холлах.'},
+							{img:'service.jpg', title:'Комплексное обслуживание мест общего пользования', text:'Регулярная уборка и поддержание чистоты в холлах, лифтах, коридорах и других общих зонах.'},
+							{img:'service.jpg', title:'Комплексное обслуживание мест общего пользования', text:'Регулярная уборка и поддержание чистоты в холлах, лифтах, коридорах и других общих зонах.'},
+							{img:'service.jpg', title:'Комплексное обслуживание мест общего пользования', text:'Регулярная уборка и поддержание чистоты в холлах, лифтах, коридорах и других общих зонах.'},
+							{img:'service.jpg', title:'Комплексное обслуживание мест общего пользования', text:'Регулярная уборка и поддержание чистоты в холлах, лифтах, коридорах и других общих зонах.'},
+						]
+					each item in list
+						.services-block
+							a(href="#").services-block__img-wrap
+								.services-block__img
+									img(src="/upload/"+item.img, alt="")
+
+							.services-block__content
+								.services-block__info
+									.services-block__title
+										a(href="#")= item.title
+
+									.services-block__text= item.text
+
+								.services-block__bottom
+									.services-block__price
+										.services-block__price-icon
+											+svg('ic-clean','ic-clean', '26', '26')
+
+										span От 30 руб/м<sup>2</sup>
+
+									a(href="#").btn.btn_small заказать
+										+svg('ic-arrow-diagonal','ic-arrow-diagonal', '19', '19')
+
+		.row
+			.col-12
+				.services-block-list__btn
+					a(href="#").btn.btn_border.btn_big смотреть все

@@ -26,6 +26,18 @@
 		flex-shrink: 0;
 		width: 435px;
 		padding-top: 8px;
+
+		.btn{margin-top: 50px;}
+	}
+
+	&__label{
+		display: flex;
+		align-items: center;
+		gap: 5px;
+		margin-top: 16px;
+		font-size: 1.6rem;
+
+		.icon{flex-shrink: 0;}
 	}
 
 	.form-line{margin-top: 193px;}
@@ -43,22 +55,20 @@
 		&__content{flex-direction: column;}
 		&__info{width: 100%;}
 
-		&__wrap{
-			border-radius: 0;
-			padding-bottom: 0;
-		}
+		&__wrap{border-radius: 0;}
 
 		.form-line{
 			margin: 100px -16px 0;
 			padding: 32px 16px 0;
 			background: #fff;
+			margin-bottom: -63px;
 		}
 	}
 }
 
 @media (max-width: 767px) {
 	.top-block{
-		&__wrap{padding: 105px 0 0;}
+		&__wrap{padding-top: 105px;}
 		&__content{gap: 30px;}
 		.form-line{margin-top: 70px;}
 	}

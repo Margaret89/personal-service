@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 // Раскрывающийся блок
 document.querySelectorAll('.js-unwrap-block').forEach((accSection) => {
-	const accHeader = accSection.querySelector('.js-unwrap-head ');
+	const accHeader = accSection.querySelector('.js-unwrap-head');
 	const accBody = accSection.querySelector('.js-unwrap-content');
 	const accContent = accSection.querySelector('.js-unwrap-info');
 	
@@ -84,7 +84,7 @@ if(document.querySelector('.js-select')){
 
 // Слайдер проектов
 if(document.querySelector('.js-projects-slider')){
-	const topSlider = new Swiper('.js-projects-slider',
+	const projectsSlider = new Swiper('.js-projects-slider',
 	{
 		modules: [Navigation],
 		slidesPerView: 1,
@@ -100,6 +100,50 @@ if(document.querySelector('.js-projects-slider')){
 			},
 			768: {
 				slidesPerView: 2.1,
+				spaceBetween: 16,
+			},
+		},
+	});
+}
+
+// Слайдер брендов
+if(document.querySelector('.js-brands-slider')){
+	const brandsSlider = new Swiper('.js-brands-slider',
+	{
+		modules: [Navigation],
+		slidesPerView: 1.5,
+		spaceBetween: 16,
+		navigation: {
+			nextEl: '.js-brands-slider-next',
+			prevEl: '.js-brands-slider-prev',
+		},
+		breakpoints: {
+			992: {
+				slidesPerView: 4,
+				spaceBetween: 40,
+			},
+			768: {
+				slidesPerView: 2,
+				spaceBetween: 24,
+			},
+		},
+	});
+}
+
+// Слайдер изображений
+if(document.querySelector('.js-gallery-slider')){
+	const gallerySlider = new Swiper('.js-gallery-slider',
+	{
+		modules: [Navigation],
+		slidesPerView: 1,
+		spaceBetween: 8,
+		navigation: {
+			nextEl: '.js-gallery-slider-next',
+			prevEl: '.js-gallery-slider-prev',
+		},
+		breakpoints: {
+			768: {
+				slidesPerView: 1.78,
 				spaceBetween: 16,
 			},
 		},
@@ -267,3 +311,35 @@ document.addEventListener('openSuccessPopupForm',function(e){
 	Fancybox.close();
 	Fancybox.show([{ src: "#msg-success", type: "inline" }]);
 });
+
+//Переключение изображений с метками
+if(document.querySelector('.js-details-img')){
+	//Задаем активное изображение по умолчанию
+	document.querySelectorAll(".js-details-img").forEach(function(images){
+		images.querySelector(".js-details-img-item").classList.add('active');
+	});
+
+	//Задаем активный заголовок по умолчанию
+	document.querySelectorAll(".js-details-titles").forEach(function(titles){
+		titles.querySelector(".js-details-titles-item").classList.add('active');
+	});
+
+	//Переключаем изображение
+	document.querySelectorAll(".js-details-titles-item").forEach(function(title){
+		title.addEventListener('click', function(){
+			var activeNum = this.getAttribute('data-num');
+			var parent = this.closest('.js-details');
+
+			parent.querySelectorAll(".js-details-titles-item").forEach(function(title){
+				title.classList.remove('active');
+			});
+
+			parent.querySelectorAll(".js-details-img-item").forEach(function(img){
+				img.classList.remove('active');
+			});
+
+			this.classList.add('active');
+			document.querySelector('.js-details-img-item[data-num='+activeNum+']').classList.add('active');
+		})
+	});
+}

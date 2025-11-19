@@ -1,0 +1,65 @@
+/*-------------- our-clients -----------------*/
+.our-clients{
+	h2, .h2{margin-bottom: 1.5rem;}
+
+	&__actions{
+		display: flex;
+		align-items: center;
+		gap: 24px;
+		margin-top: 25px;
+
+		.btn{
+			width: 300px;
+		}
+	}
+
+	&__arr{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		width: 80px;
+		height: 80px;
+		border-radius: 50%;
+		border: 1px solid rgba(75, 75, 75, 0.8);
+		color: rgba(75, 75, 75, 0.8);
+		transition: all 0.2s ease;
+		cursor: pointer;
+
+		&:hover{
+			border-color: var(--color-primary);
+			box-shadow: inset 0 -100px 0 0 var(--color-primary-dark);
+			color: #fff;
+		}
+	}
+
+	&__img{
+		margin-top: 75px;
+		img{border-radius: 40px;}
+	}
+}
+
+@media (max-width: 991px) {
+	.our-clients{
+		.tags{margin-bottom: 40px;}
+	}
+}
+
+@media (max-width: 767px) {
+	.our-clients{
+		&__arr{
+			width: 64px;
+			height: 64px;
+
+			.icon{
+				width: 20px;
+				height: 38px;
+			}
+		}
+
+		&__img{
+			margin-top: 60px;
+			img{border-radius: 24px;}
+		}
+	}
+}

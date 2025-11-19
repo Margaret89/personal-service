@@ -1,0 +1,209 @@
+extends tmpl/_layout
+
+block vars
+	- var pageId = 'service'
+
+block body
+	section.breadcrumb-wrap
+		.container
+			.row
+				.col-12
+					ul.breadcrumb
+						li.breadcrumb__item
+							a(href="#").breadcrumb__link Главная/
+
+						li.breadcrumb__item
+							a(href="#").breadcrumb__link Yслуги/
+
+	section.service-main
+		.container
+			.row
+				.col-lg-6.order-2.order-lg-1
+					h1.d-none.d-lg-block Генеральная уборка
+
+					p От уборки небольшой студии до клининга ресторанов после ремонта
+
+					form.form-call
+						.form-call__content
+							input(name="phone", type="text", class="js-phone", required="required", placeholder="+7 (999) 455 75 94")
+							button(type="submit").btn заказать звонок
+
+						.form-call__note
+							+svg('ic-clock','ic-clock', '21', '21')
+							|Свяжемся с вами в течение 10 минут
+
+				.col-lg-6.order-1.order-lg-2
+					.service-main__img-wrap
+						.service-main__img
+							img(src="/upload/service-main.jpg", alt="")
+
+						.service-main__title Генеральная уборка
+
+
+	
+		.progress-wrap
+			.container
+				.row
+					.col-lg-6
+						.progress-item
+							.progress-item__icon
+								+svg('ic-broom','ic-broom', '31', '34')
+							.progress-item__title 82 человека в команде
+
+					.col-lg-6
+						.progress-item
+							.progress-item__icon
+								+svg('ic-person','ic-person', '31', '34')
+							.progress-item__title 1 200 000 m2 уборки ежедневно
+
+	
+	section.service-desc.m-indent
+		.container
+			.row
+				.col-12
+					h2 описание услуги
+
+					p Любое помещение нуждается в поддержании чистоты. Особенно, если мы говорим о помещениях для бизнеса — коммерческая недвижимость, торговые центры, офисные центры, торгово-ра ства. Также уборка зданий необходима в медицинских, образовательных и прочих учреждениях. А уборка в квартире после вечеринки и шумного застолья.
+
+					ul
+						li Уборка офисных помещений может быть разовой или регулярной. Проводится в целях очистки офиса от грязи, пыли и т. д. Генеральная уборка включает в себя очистку всех поверхностей, мебели, мойку стен и прочее.
+						li 
+							a(href="#") Генеральная уборка производственных помещений 
+							|необходима для того, чтобы они соответствовали санитарным нормам, а грязь и мусор не создавали неудобств при выполнении производственных задач. Генеральная уборка позволит привести помещение в надлежащее и безопасное состояние.
+
+					.advantages-list
+						.advantage-item
+							.advantage-item__top
+								.advantage-item__icon
+									+svg('ic-clean','ic-clean', '26', '26')
+
+								.advantage-item__title Персонал
+
+							.advantage-item__text Работу выполняет штатная бригада из 6 сотрудников, закреплённая за объектом. Все сотрудники прошли инструктаж под стандарты отеля, работают в форме, регулярно проходят проверки качества и переаттестацию.
+						
+						.advantage-item
+							.advantage-item__top
+								.advantage-item__icon
+									+svg('ic-clean','ic-clean', '26', '26')
+
+								.advantage-item__title Объём работы
+
+							.advantage-item__text
+								ul
+									li Поддерживающая уборка 7 зон ежедневно
+									li Влажная уборка лобби каждые 4 часа
+									li Уборка после мероприятий и конференций
+									li Мойка витражей 1 раз в месяц
+									li Контроль расходников и отчёты каждый понедельник
+
+		.container
+			.row
+				.col-12
+					.info-btn
+						.info-btn__label Оставьте заявку, и мы оперативно ответим на ваши вопросы
+						a(href="#").btn заказать звонок
+
+	
+	section.attitude-wrap.bg-color.m-indent
+		.container
+			.row
+				.col-12
+					.h4 Наш подход
+
+					.attitude-wrap__top
+						h2 Для вашего комфорта
+						a(href="#").btn.d-none.d-md-inline-flex Оставить заявку
+
+		.attitude-list
+			.container
+				.row
+					-
+						var list=[
+							{title:'Эстетика', text:'Визуально чистый сайт контент, много пространства и чистоты (светлые, яркие или мягкие природные, чистые цвета)'},
+							{title:'Прозрачность', text:'Визуально чистый сайт контент, много пространства и чистоты (светлые, яркие или мягкие природные, чистые цвета)'},
+							{title:'Надёжность', text:'Визуально чистый сайт контент, много пространства и чистоты (светлые, яркие или мягкие природные, чистые цвета)'},
+						]
+					each item in list
+						.col-lg-4
+							.attitude-item
+								.attitude-item__title= item.title
+								.attitude-item__text= item.text
+
+		.container.d-md-none
+			.row
+				.col-12
+					.attitude-wrap__btn
+						a(href="#").btn Оставить заявку
+
+
+	hr
+
+	section.brands-wrap.m-indent
+		.brands-wrap__top
+			.container
+				.row
+					.col-md-8
+						h2 надежные бренды и&nbsp;прямые поставк
+						p Благодаря прямым договорам с брендами вы получаете профсредства и технику по цене производителя с гарантией качества и эффективности
+		
+					.col-md-4.d-flex.align-items-end.justify-content-end
+						.slider-arr-list
+							.swiper-button-prev.slider-arr.js-brands-slider-prev
+								+svg('ic-arrow-left','ic-arrow-left', '27', '50')
+							
+							.swiper-button-next.slider-arr.js-brands-slider-next
+								+svg('ic-arrow-right','ic-arrow-right', '27', '50')
+
+		.swiper.brands-slider.js-brands-slider
+			.swiper-wrapper
+				-
+					var list=[
+						{
+							img:'brand1.jpg',
+							title:'Daewood davc 25165',
+						},
+						{
+							img:'brand2.jpg',
+							title:'effect',
+						},
+						{
+							img:'brand3.jpg',
+							title:'Karcher Puzzi 30/4',
+						},
+						{
+							img:'brand4.jpg',
+							title:'grass',
+						},
+						{
+							img:'brand5.jpg',
+							title:'Karcher NT 22/1 Ap Te L',
+						},
+						{
+							img:'brand2.jpg',
+							title:'effect',
+						},
+						{
+							img:'brand3.jpg',
+							title:'Karcher Puzzi 30/4',
+						},
+						{
+							img:'brand4.jpg',
+							title:'grass',
+						},
+						
+					]
+				each item in list
+					.swiper-slide.brand-item
+						.brand-item__img-wrap
+							.brand-item__img
+								img(src="/upload/"+item.img, alt="")
+
+						.brand-item__title= item.title
+
+	include ./components/_advantage
+	
+	include ./components/_steps
+
+	include ./components/_faq
+	
+	include ./components/_main-contacts

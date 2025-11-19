@@ -1,0 +1,286 @@
+extends tmpl/_layout
+
+block vars
+	- var pageId = 'cleaning'
+
+block body
+	section.top-block.mb-indent
+		.st-width
+			.top-block__wrap
+				.container
+					.row
+						.col-12
+							.top-block__content
+								.top-block__title
+									h1 клининг, который ценят жители
+
+								.top-block__info
+									p Аутстаффинг для отелей: команда профессионалов  без текучки, без накладок, с ежедневной гарантией результата
+
+									.d-none.d-md-block
+										a(href="#", data-fancybox, data-src="#callback").btn.btn_big заказать звонок
+
+										.top-block__label
+											+svg('ic-clock','ic-clock', '21', '21')
+											|Свяжемся с вами в течение 10 минут
+
+	section.progress-wrap.m-indent
+		.container
+			.row
+				.col-lg-4
+					.progress-item
+						.progress-item__icon
+							+svg('ic-broom','ic-broom', '31', '34')
+						.progress-item__title
+							|1 200 000 m2
+							br
+							|уборки ежедневно
+
+				.col-lg-4
+					.progress-item
+						.progress-item__icon
+							+svg('ic-person','ic-person', '31', '34')
+						.progress-item__title
+							|82 человека 
+							br
+							|в команде
+
+				.col-lg-4
+					.progress-item
+						.progress-item__icon
+							+svg('ic-door','ic-door', '26', '29')
+						.progress-item__title
+							|180 000 номеров 
+							br
+							|убрано в 2024 году
+
+			.row
+				.col-12
+					.progress-wrap__btn.d-md-none
+						a(href="#", data-fancybox, data-src="#callback").btn.btn_big заказать звонок
+
+	section.services-block-wrap.m-indent
+		.container
+			.row
+				.col-12
+					.h4 Услуги
+					h2 Клининг 
+						span.d-none.d-md-inline для бизнеса
+
+		.container
+			.row
+				.col-12
+					.services-block-list
+						-
+							var list=[
+								{img:'service.jpg', title:'Комплексное обслуживание мест общего пользования', text:'Регулярная уборка и поддержание чистоты в холлах, лифтах, коридорах и других общих зонах.'},
+								{img:'service.jpg', title:'Комплексное обслуживание', text:'Регулярная уборка и поддержание чистоты в холлах.'},
+								{img:'service.jpg', title:'Комплексное обслуживание мест общего пользования', text:'Регулярная уборка и поддержание чистоты в холлах, лифтах, коридорах и других общих зонах.'},
+								{img:'service.jpg', title:'Комплексное обслуживание мест общего пользования', text:'Регулярная уборка и поддержание чистоты в холлах, лифтах, коридорах и других общих зонах.'},
+								{img:'service.jpg', title:'Комплексное обслуживание мест общего пользования', text:'Регулярная уборка и поддержание чистоты в холлах, лифтах, коридорах и других общих зонах.'},
+								{img:'service.jpg', title:'Комплексное обслуживание мест общего пользования', text:'Регулярная уборка и поддержание чистоты в холлах, лифтах, коридорах и других общих зонах.'},
+							]
+						each item in list
+							.services-block
+								a(href="#").services-block__img-wrap
+									.services-block__img
+										img(src="/upload/"+item.img, alt="")
+
+								.services-block__content
+									.services-block__info
+										.services-block__title
+											a(href="#")= item.title
+
+										.services-block__text= item.text
+
+									.services-block__bottom
+										.services-block__price
+											.services-block__price-icon
+												+svg('ic-clean','ic-clean', '26', '26')
+
+											span От 30 руб/м<sup>2</sup>
+
+										a(href="#").btn.btn_small заказать
+											+svg('ic-arrow-diagonal','ic-arrow-diagonal', '19', '19')
+
+			.row
+				.col-12
+					.services-block-list__btn
+						a(href="#").btn.btn_border.btn_big смотреть все
+
+	
+	hr
+
+	include ./components/_clients
+
+	hr.mt-indent
+
+	section.details-wrap.m-indent
+		.container
+			.row
+				.col-lg-7
+					.h4 Услуги
+					h2 внимательный подход к деталям
+
+		.details.js-details
+			.container
+				.row
+					.col-lg-9.order-2.order-lg-1
+						.details__main
+							.details-img.js-details-img
+								-
+									var list=[
+										{num:'1', img:'room.jpg'},
+										{num:'2', img:'room2.jpg'},
+										{num:'3', img:'room3.jpg'},
+										{num:'4', img:'room4.jpg'},
+										{num:'5', img:'room5.jpg'},
+										{num:'6', img:'room6.jpg'},
+									]
+								each item, index in list
+									.details-img__item.js-details-img-item(data-num="detail"+item.num)
+										img(src="/upload/"+item.img, alt="")
+
+										if(index==0)
+											.details-img-points-wrap
+												-
+													var points=[
+														{text:'Уход за текстилем', x:'48.6%', y:'10.5%'},
+														{text:'Мытьё окон', x:'64%', y:'36.5%'},
+														{text:'Обеспыливание мебели', x:'12%', y:'42%'},
+														{text:'Обеспыливание мебели', x:'38%', y:'70%'},
+														{text:'Мытьё полов', x:'75%', y:'77%'},
+													]
+												each point in points
+													.details-img-points(style="left:"+point.x+"; top:"+point.y)
+														.details-img-points__label= point.text
+														.details-img-points__arr
+															+svg('ic-arrow-down','ic-arrow-down', '18', '9')
+
+					.col-lg-3.d-lg-flex.align-items-lg-center.order-1.order-lg-2
+						.details-titles.js-details-titles
+							-
+								var list=[
+									{num:'1', text:'Кухня'},
+									{num:'2', text:'Спальня'},
+									{num:'3', text:'Ванная'},
+									{num:'4', text:'Общая зона'},
+									{num:'5', text:'Придворовая территория'},
+									{num:'6', text:'Фасады и окна'},
+								]
+							each item in list
+								.details-titles__item.js-details-titles-item(data-num="detail"+item.num)= item.text
+
+		.container
+			.row
+				.col-12
+					.info-btn
+						.info-btn__label Оставьте заявку для ответов на ваши вопросы
+						a(href="#").btn заказать звонок
+
+	include ./components/_advantage
+
+	include ./components/_steps
+
+	section.brands-wrap.m-indent
+		.brands-wrap__top
+			.container
+				.row
+					.col-md-8
+						h2 надежные бренды и&nbsp;прямые поставк
+						p Благодаря прямым договорам с брендами вы получаете профсредства и технику по цене производителя с гарантией качества и эффективности
+		
+					.col-md-4.d-flex.align-items-end.justify-content-end
+						.slider-arr-list
+							.swiper-button-prev.slider-arr.js-brands-slider-prev
+								+svg('ic-arrow-left','ic-arrow-left', '27', '50')
+							
+							.swiper-button-next.slider-arr.js-brands-slider-next
+								+svg('ic-arrow-right','ic-arrow-right', '27', '50')
+
+		.swiper.brands-slider.js-brands-slider
+			.swiper-wrapper
+				-
+					var list=[
+						{
+							img:'brand1.jpg',
+							title:'Daewood davc 25165',
+						},
+						{
+							img:'brand2.jpg',
+							title:'effect',
+						},
+						{
+							img:'brand3.jpg',
+							title:'Karcher Puzzi 30/4',
+						},
+						{
+							img:'brand4.jpg',
+							title:'grass',
+						},
+						{
+							img:'brand5.jpg',
+							title:'Karcher NT 22/1 Ap Te L',
+						},
+						{
+							img:'brand2.jpg',
+							title:'effect',
+						},
+						{
+							img:'brand3.jpg',
+							title:'Karcher Puzzi 30/4',
+						},
+						{
+							img:'brand4.jpg',
+							title:'grass',
+						},
+						
+					]
+				each item in list
+					.swiper-slide.brand-item
+						.brand-item__img-wrap
+							.brand-item__img
+								img(src="/upload/"+item.img, alt="")
+
+						.brand-item__title= item.title
+
+	hr
+	
+	section.our-clients.m-indent
+		.container
+			.row
+				.col-12
+					.h4 Наши клиенты
+
+			.row
+				.col-lg-7
+					h2 Регулярная уборка ЖК&nbsp;“Ленинград”
+
+					ul.tags
+						-
+							var list=[
+								{text:'30 сотрудников'},
+								{text:'с 2022 года'},
+								{text:'комплексное обслуживание'},
+							]
+						each item in list
+							li.tags__item(class=item.status?' active':'')
+								a(href="#").tags__link= item.text
+
+				.col-lg-5
+					p Визуально чистый сайт контент, много пространства и чистоты (светлые, яркие или мягкие природные, чистые цвета)
+
+					.our-clients__actions
+						a(href="#").btn.btn_big Подробнее
+
+						.our-clients__arr
+							+svg('ic-arrow-right','ic-arrow-right', '27', '50')
+
+			.row
+				.col-12
+					.our-clients__img
+						picture
+							source(srcset="/upload/our-clients-mobile.jpg",media="(max-width: 767px)")
+							img(src="/upload/our-clients.jpg", alt="")
+	
+	include ./components/_main-contacts

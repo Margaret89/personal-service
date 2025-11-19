@@ -1,0 +1,21 @@
+/*-------------- project -----------------*/
+.project-wrap{
+	.advantages-list{
+		justify-content: space-between;
+		gap: 65px 24px;
+	}
+
+	.advantage-item{
+		width: calc(50% - 12px);
+		max-width: 498px;
+
+		&__title{max-width: none;}
+	}
+}
+
+@media (max-width: 767px) {
+	.project-wrap{
+		.advantages-list{gap: 45px;}
+		.advantage-item{width: 100%;}
+	}
+}

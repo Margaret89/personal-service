@@ -1,0 +1,67 @@
+/*-------------- progress -----------------*/
+.progress-wrap{
+	&__btn{
+		margin-top: 8px;
+		text-align: center;
+
+		.btn{width: 100%;}
+	}
+}
+
+.progress-item{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 42px;
+	min-height: 200px;
+	border-radius: 24px;
+	background: rgba(8, 119, 129, 0.05);
+	padding: 38px 16px;
+	height: calc(100% - 24px);
+	margin-bottom: 24px;
+
+	&__icon{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		width: 34px;
+		height: 34px;
+		color: var(--color-primary-medium);
+	}
+
+	&__title{
+		font-family: var(--font-neutral);
+		font-size: 2rem;
+		line-height: 1.2;
+		text-transform: uppercase;
+	}
+}
+
+@media (max-width: 991px) {
+	.progress-item{
+		display: flex;
+		align-items: center;
+		flex-direction: row;
+		justify-content: flex-start;
+		gap: 20px;
+		height: auto;
+		min-height: 0;
+
+		&__icon{margin-bottom: 0;}
+	}
+}
+
+@media (max-width: 767px) {
+	.progress-item{
+		gap: 14px;
+		padding: 26px 12px;
+		margin-bottom: 8px;
+
+		&__title{
+			font-size: 1.4rem;
+			line-height: 1.5;
+		}
+	}
+}

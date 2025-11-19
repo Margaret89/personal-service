@@ -4,6 +4,22 @@
 			"href": "main.html",
 			"title":"Главная"
 		},
+		"cleaning":{
+			"href": "cleaning.html",
+			"title":"АПАРТ"
+		},
+		"hotel":{
+			"href": "hotel.html",
+			"title":"Отели"
+		},
+		"service":{
+			"href": "service.html",
+			"title":"Услуга"
+		},
+		"client":{
+			"href": "client.html",
+			"title":"Клиент"
+		},
 		"tipografika":{
 			"href": "tipografika.html",
 			"title":"Типографика",

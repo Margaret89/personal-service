@@ -1,0 +1,151 @@
+extends tmpl/_layout
+
+block vars
+	- var pageId = 'client'
+
+block body
+	section.client-info
+		.container
+			.row
+				.col-12
+					.client-info__title Гостиница
+		
+		.client-info__main
+			.container
+				.row
+					.col-12
+						.client-info__content
+							.client-info__subtitle ленинград
+
+							.client-info__bottom
+								.client-info-tags
+									-
+										var list=[
+											{text:'2015 - настоящее время'},
+											{text:'2015 - настоящее время'},
+											{text:'2015 - настоящее время'},
+											{text:'2015 - настоящее время'},
+										]
+									each item in list
+										.client-info-tags__item= item.text
+
+								a(href="#").btn.btn_big заказать услугу
+
+	section.project-wrap.m-indent
+		.container
+			.row
+				.col-12
+					h2 о проекте
+
+					.advantages-list
+						.advantage-item
+							.advantage-item__top
+								.advantage-item__icon
+									+svg('ic-clean','ic-clean', '26', '26')
+
+								.advantage-item__title описание объекта
+
+							.advantage-item__text Гостиница уровня 4* на 210 номеров, с просторным лобби, рестораном, конференц-залами и SPA-зоной. Высокие требования к уровню чистоты, эстетике и тишине в процессе обслуживания.
+
+						.advantage-item
+							.advantage-item__top
+								.advantage-item__icon
+									+svg('ic-clean','ic-clean', '26', '26')
+
+								.advantage-item__title результат
+
+							.advantage-item__text Уровень чистоты стабильно соответствует стандартам отеля. Ни одной жалобы от гостей за всё время сотрудничества. Визуально чистое пространство поддерживается без участия управляющей стороны.
+
+						.advantage-item
+							.advantage-item__top
+								.advantage-item__icon
+									+svg('ic-clean','ic-clean', '26', '26')
+
+								.advantage-item__title Персонал
+
+							.advantage-item__text Работу выполняет штатная бригада из 6 сотрудников, закреплённая за объектом. Все сотрудники прошли инструктаж под стандарты отеля, работают в форме, регулярно проходят проверки качества и переаттестацию.
+						
+						
+						.advantage-item
+							.advantage-item__top
+								.advantage-item__icon
+									+svg('ic-clean','ic-clean', '26', '26')
+
+								.advantage-item__title Объём работы
+
+							.advantage-item__text
+								ul
+									li Поддерживающая уборка 7 зон ежедневно
+									li Влажная уборка лобби каждые 4 часа
+									li Уборка после мероприятий и конференций
+									li Мойка витражей 1 раз в месяц
+									li Контроль расходников и отчёты каждый понедельник
+
+	section.about-services-wrap.m-indent
+		.container
+			.row
+				.col-md-7
+					.about-services-wrap__img
+						img(src="/upload/room-big.jpg", alt="")
+
+				.col-md-5.d-flex.align-items-center
+					.about-services-wrap__content
+						.about-services
+							-
+								var list=[
+									{text:'Ежедневная уборка'},
+									{text:'Мойка окон'},
+									{text:'Аутстаффинг персонала'},
+									{text:'проверка качества'},
+								]
+							each item in list
+								.about-services__item
+									+svg('ic-tick','ic-tick', '38', '27')
+									=item.text
+
+						a(href="#").btn.btn_big хочу также
+	
+	section.person-block.bg-color.m-indent
+		.container
+			.row
+				.col-12
+					.person-block__content
+						.person-block__author
+							.person-block__ava
+								img(src="/upload/man-boss.jpg", alt="")
+	
+							.person-block__name Олег Меньшиков
+							.person-block__post Руководитель контроля качества
+
+						.person-block__quote “ АО “Святые моторы” выражает благодарность за оперативную работу,  выражает благодарность за оперативную работу, выражает благодарность за оперативную работу, выражает благодарность за оперативную работу”
+
+	section.gallery-slider-wrap.mt-indent
+		.container
+			.row
+				.col-12
+					.gallery-slider-wrap__top
+						h2 галерея
+
+						.slider-arr-list
+							.swiper-button-prev.slider-arr.js-gallery-slider-prev
+								+svg('ic-arrow-left','ic-arrow-left', '27', '50')
+							
+							.swiper-button-next.slider-arr.js-gallery-slider-next
+								+svg('ic-arrow-right','ic-arrow-right', '27', '50')
+
+	
+
+		.swiper.gallery-slider.js-gallery-slider
+			.swiper-wrapper
+				-
+					var list=[
+						{img:'gallery1.jpg'},
+						{img:'gallery2.jpg'},
+						{img:'gallery2.jpg'},
+						{img:'gallery1.jpg'},
+					]
+				each item in list
+					.swiper-slide.gallery-slider__item
+						a(href="/upload/"+item.img, data-fancybox="gallery").gallery-slider__img-wrap
+							.gallery-slider__img
+								img(src="/upload/"+item.img, alt="")

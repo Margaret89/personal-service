@@ -1,0 +1,44 @@
+/*-------------- info-btn -----------------*/
+.info-btn{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 8rem;
+	border-radius: 4rem;
+	margin-top: 32px;
+	background: #CEE4E6;
+
+	&__label{
+		width: 100%;
+		padding: 0 24px;
+		font-size: 2rem;
+		text-align: center;
+	}
+
+	.btn{
+		flex-shrink: 0;
+		padding: 0 42px;
+	}
+}
+
+@media (max-width: 991px) {
+	.info-btn{
+		flex-direction: column;
+		gap: 20px;
+		height: auto;
+		margin-top: -1px;
+		border-radius: 0 0 40px 40px;
+		padding: 20px;
+
+		&__label{padding: 0;}
+	}
+}
+
+@media (max-width: 767px) {
+	.info-btn{
+		margin-left: -16px;
+		margin-right: -16px;
+		border-radius: 0 0 24px 24px;
+		padding: 20px 16px;
+	}
+}

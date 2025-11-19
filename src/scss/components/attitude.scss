@@ -1,0 +1,49 @@
+/*-------------- attitude -----------------*/
+.attitude-wrap{
+	padding: 125px 0;
+
+	&__top{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 24px;
+		margin-bottom: 115px;
+	
+		h2, .h2{margin-bottom: 0;}
+		.btn{flex-shrink: 0;}
+	}
+}
+
+.attitude-item{
+	margin-bottom: 30px;
+
+	&__title{
+		font-family: var(--font-neutral);
+		font-size: 3.2rem;
+		line-height: 1.2;
+		text-transform: uppercase;
+		margin-bottom: 35px;
+	}
+
+	&__text{font-size: 2rem;}
+}
+
+@media (max-width: 767px) {
+	.attitude-wrap{
+		padding: 60px 0;
+
+		&__top{
+			flex-direction: column;
+			margin-bottom: 40px;
+		}
+
+		&__btn{
+			.btn{width: 100%;}
+		}
+	}
+
+	.attitude-item{
+		&__title{font-size: 2.4rem;}
+		&__text{font-size: 1.6rem;}
+	}
+}
